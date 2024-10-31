@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa; /* Light background for contrast */
+        }
+        .result-container {
+            margin-top: 50px;
+            padding: 30px;
+            border-radius: 10px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .footer {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        .btn-custom {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .btn-custom:hover {
+            background-color: #45a049; /* Darker shade for hover effect */
+        }
+       
+        .traffic-sign-image {
+        width: 150px; /* Set a fixed width */
+        height: 150px; /* Set a fixed height */
+        object-fit: contain; /* Scale the image to fit within the box */
+        background-color: #f0f0f0; /* Optional: background color for better visibility */
+        border: 2px solid #4CAF50; /* Optional: adds a border around the image */
+        border-radius: 10px; /* Optional: rounds the corners of the image */
+        margin-bottom: 20px; /* Adds space below the image */
+        }
+
+        .navbar {
+            background-color:#4CAF50;
+        }
+
+
+    </style>
+    {% block head %}
+  <title>{% block title %}{% endblock %}</title>
+    {% endblock  %}
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <a class="navbar-brand" href="/">Traffic Sign Recognition</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                  <a class="nav-link" href="/">Home</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#">About</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#">Contact</a>
+              </li>
+          </ul>
+      </div>
+  </nav>
+
+{% block content %}
+{% endblock %}
+
+    <!-- Footer -->
+    <footer class="footer text-center">
+        
+      &copy; 2024 Traffic Sign Predictor. All rights reserved.
+  
+</footer>
+
+</body>
+</html>

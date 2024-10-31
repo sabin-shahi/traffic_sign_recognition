@@ -1,0 +1,7 @@
+Yield - 00013_00000_00006.png
+Speed limit (60km/h) - 00003_00000_00003.png
+No passing - 00009_00000_00008.png
+No passing - 00009_00000_00004.png
+No passing - 00009_00000_00010.png
+Priority road - 00012_00000_00008.png
+Right-of-way at intersection - 00012_00004_00007.png

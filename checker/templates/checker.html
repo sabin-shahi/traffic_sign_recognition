@@ -1,0 +1,34 @@
+{% extends "master.html" %}
+
+
+{% load static %}
+
+{% block content %}
+
+<!-- Result Container -->
+<div class="container result-container text-center">
+    <img src="{% static 'images/' %}{{ new_image }}" alt="Traffic Sign Image" class="img-fluid traffic-sign-image">
+    <h1 style="color: #4CAF50">The traffic sign is: <strong>{{ sign }}</strong></h1>
+    <a href="/" class="btn btn-custom btn-lg">Go Back</a>
+</div>
+
+<!-- Prediction History Section -->
+<div class="container result-container text-center" style="margin-top: 20px;">
+    <h2 style ='color:#4CAF50;'>Prediction-History</h2>
+    <div class="row">
+{% for item in history_list %}
+    <div class="col-md-4">
+        <div class="card" style="margin-bottom: 20px;">
+            <img src="{% static 'images/'|add:item.image_name %}" alt="Image" class="card-img-top traffic-sign-image">
+            <div class="card-body">
+                <h5 class="card-title" style="font-size: 16px; color: #4CAF50;">Prediction: {{ item.prediction }}</h5>
+            </div>
+        </div>
+    </div>
+{% endfor %}
+</div>
+</div>
+
+
+
+{% endblock %}

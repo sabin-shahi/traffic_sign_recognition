@@ -1,0 +1,38 @@
+{% extends "master.html" %}
+
+{% load static %}
+{% block head %}
+    
+{% endblock  %}
+
+{% block content %}
+
+    <div class="container result-container text-center">
+        <h1 style="color: #4CAF50;">Upload an Image to check</h1>
+        <form action="{% url "checker" %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <input type="file" name="image" accept="image/*" required>
+
+            <input type="submit" value="Upload" class="btn btn-success">
+        </form>
+    </div>
+
+   <!-- Prediction History Section -->
+<div class="container result-container text-center" style="margin-top: 20px;">
+    <h2 style ='color:#4CAF50;'>Samples</h2>
+    <div class="row">
+{% for item in sample_list %}
+    <div class="col-md-4">
+        <div class="card" style="margin-bottom: 20px;">
+            <img src="{% static 'images/'|add:item.image_name %}" alt="Image" class="card-img-top traffic-sign-image">
+            <div class="card-body">
+                <h5 class="card-title" style="font-size: 16px; color: #4CAF50;">Prediction: {{ item.prediction }}</h5>
+            </div>
+        </div>
+    </div>
+{% endfor %}
+</div>
+</div>
+
+
+{% endblock  %}
